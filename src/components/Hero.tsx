@@ -50,7 +50,7 @@ export default function Hero() {
       />
 
       <div className="relative z-10 flex flex-col items-center px-4 sm:px-6 text-center max-w-4xl mx-auto">
-        <p className="font-display font-600 text-forest text-sm sm:text-base tracking-[0.3em] uppercase mb-4">
+        <p className="font-display font-800 text-forest text-base sm:text-lg md:text-xl tracking-[0.25em] uppercase mb-4">
           Fort Hunt Music Festival
         </p>
 
@@ -68,7 +68,7 @@ export default function Hero() {
         <p className="font-display font-700 text-xl sm:text-2xl md:text-3xl text-bark mb-2">
           Saturday, May 16, 2026
         </p>
-        <p className="font-body text-bark-light text-base sm:text-lg mb-8">
+        <p className="font-display font-500 text-bark-light text-sm sm:text-base md:text-lg mb-8">
           Waynewood Park &bull; Alexandria, VA &bull; 11 AM &ndash; Late
         </p>
 

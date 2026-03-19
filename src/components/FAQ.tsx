@@ -25,15 +25,15 @@ const FAQS = [
   },
   {
     q: "Will there be food and drinks?",
-    a: "Absolutely. Local food trucks will be on-site, and we're working with Port City Brewery for the beer garden. Details on specific vendors coming soon.",
+    a: "Absolutely. Local food trucks will be on-site and we'll have a beer garden with a great selection of brews. Details on specific vendors coming soon.",
   },
   {
     q: "Can I bring a blanket or lawn chair?",
     a: "Please do! Bring your lawn chairs, blankets, coolers, and good vibes. Pop-up tents are only allowed in reserved Lounge Zone spots. No outside alcohol, glass containers, or pets (service animals welcome).",
   },
   {
-    q: "I'm an artisan / band — how do I get involved?",
-    a: "We'd love to hear from you! Artisan registration is $25 — apply at tinyurl.com/WWS26-ArtisanInterest. Bands can submit interest at tinyurl.com/WWS26-BandInterestForm.",
+    q: "I'm an artisan — how do I get involved?",
+    a: "We'd love to have you! Artisan registration is $25 — apply at tinyurl.com/WWS26-ArtisanInterest.",
   },
   {
     q: "What if it rains?",
@@ -50,11 +50,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="font-display font-700 text-bark group-hover:text-forest transition-colors pr-4">
+        <span className="font-display font-800 text-gold group-hover:text-gold-light transition-colors pr-4 text-base sm:text-lg">
           {q}
         </span>
         <svg
-          className={`w-5 h-5 text-forest flex-shrink-0 transition-transform duration-200 ${
+          className={`w-5 h-5 text-gold flex-shrink-0 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
           fill="none"
@@ -69,7 +69,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
           open ? "max-h-60 pb-5" : "max-h-0"
         }`}
       >
-        <p className="font-body text-bark-light leading-relaxed">{a}</p>
+        <p className="font-body text-bark-light leading-relaxed text-sm sm:text-base pl-0 sm:pl-1">{a}</p>
       </div>
     </div>
   );

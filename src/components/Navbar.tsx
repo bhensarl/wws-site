@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "#lineup", label: "Lineup" },
   { href: "#tickets", label: "Tickets" },
   { href: "#merch", label: "Merch" },
   { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contact" },
   { href: "#location", label: "Location" },
 ];
 
@@ -31,9 +32,19 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="#" className="font-display font-900 text-xl text-forest tracking-tight">
-            WWS &apos;26
-          </Link>
+          <a href="#" className="flex items-center gap-2.5 group">
+            <Image
+              src="/images/hero-banner.png"
+              alt="WWS"
+              width={40}
+              height={20}
+              className="h-8 w-auto group-hover:scale-105 transition-transform"
+            />
+            <span className="font-display font-900 text-xl tracking-tight">
+              <span className="text-forest">WWS</span>
+              <span className="text-gold">&apos;26</span>
+            </span>
+          </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -48,7 +59,7 @@ export default function Navbar() {
             ))}
             <a
               href="#tickets"
-              className="bg-forest text-white font-display font-700 text-sm px-5 py-2 rounded-full hover:bg-forest-dark transition-colors"
+              className="bg-forest text-white font-display font-700 text-sm px-5 py-2 rounded-full hover:bg-forest-dark transition-colors shadow-sm"
             >
               Get Tickets
             </a>

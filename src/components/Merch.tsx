@@ -52,15 +52,18 @@ export default function Merch() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 space-y-3">
           <a
             href="https://www.eventbrite.com/e/1373583608549"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-forest text-white font-display font-700 text-base px-8 py-3 rounded-full hover:bg-forest-dark transition-colors"
           >
-            Pre-Order Merch
+            Pre-Order Merch on Eventbrite
           </a>
+          <p className="text-bark-light text-xs font-body">
+            Scroll down on the Eventbrite page and click &ldquo;Tickets&rdquo; to add merch to your order.
+          </p>
         </div>
       </div>
     </section>

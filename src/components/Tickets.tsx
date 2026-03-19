@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import Script from "next/script";
+import { useState, useCallback } from "react";
 
 const EVENT_ID = "1373583608549";
 
@@ -47,14 +46,6 @@ const TICKETS = [
     max: 4,
   },
 ];
-
-declare global {
-  interface Window {
-    EBWidgets?: {
-      createWidget: (config: Record<string, unknown>) => void;
-    };
-  }
-}
 
 function QuantitySelector({
   value,
@@ -109,9 +100,6 @@ export default function Tickets() {
   const [quantities, setQuantities] = useState<Record<string, number>>(
     Object.fromEntries(TICKETS.map((t) => [t.id, 0]))
   );
-  const [widgetReady, setWidgetReady] = useState(false);
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
-
   const totalItems = Object.values(quantities).reduce((a, b) => a + b, 0);
   const subtotal = TICKETS.reduce(
     (sum, t) => sum + t.price * (quantities[t.id] || 0),
@@ -122,55 +110,14 @@ export default function Tickets() {
     setQuantities((prev) => ({ ...prev, [id]: value }));
   }, []);
 
-  const initWidget = useCallback(() => {
-    if (typeof window !== "undefined" && window.EBWidgets) {
-      setWidgetReady(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (checkoutOpen && widgetReady && window.EBWidgets) {
-      const container = document.getElementById("eb-checkout-container");
-      if (container) container.innerHTML = "";
-
-      window.EBWidgets.createWidget({
-        widgetType: "checkout",
-        eventId: EVENT_ID,
-        modal: false,
-        iFrameContainerId: "eb-checkout-container",
-        iFrameContainerHeight: 480,
-        onOrderComplete: () => {
-          setCheckoutOpen(false);
-          setQuantities(Object.fromEntries(TICKETS.map((t) => [t.id, 0])));
-        },
-      });
-    }
-  }, [checkoutOpen, widgetReady]);
-
   const handleCheckout = () => {
-    if (widgetReady) {
-      setCheckoutOpen(true);
-      setTimeout(() => {
-        document
-          .getElementById("eb-checkout-section")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-    } else {
-      window.open(
-        `https://www.eventbrite.com/e/${EVENT_ID}`,
-        "_blank"
-      );
-    }
+    window.open(
+      `https://www.eventbrite.com/e/${EVENT_ID}`,
+      "_blank"
+    );
   };
 
   return (
-    <>
-      <Script
-        src="https://www.eventbrite.com/static/widgets/eb_widgets.js"
-        strategy="lazyOnload"
-        onLoad={initWidget}
-      />
-
       <section id="tickets" className="py-20 sm:py-28 px-4 sm:px-6 bg-forest">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -296,44 +243,6 @@ export default function Tickets() {
             </div>
           </div>
 
-          {/* Embedded Eventbrite checkout */}
-          {checkoutOpen && (
-            <div
-              id="eb-checkout-section"
-              className="mt-8 bg-white rounded-2xl p-4 sm:p-6 shadow-xl"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display font-700 text-bark text-lg">
-                  Complete Your Purchase
-                </h3>
-                <button
-                  onClick={() => setCheckoutOpen(false)}
-                  className="text-bark-light hover:text-bark transition-colors p-1"
-                  aria-label="Close checkout"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div id="eb-checkout-container" className="min-h-[480px]" />
-              <p className="mt-4 text-center text-xs text-bark-light">
-                Secure checkout powered by Eventbrite. Your selections above are
-                for planning — finalize quantities and pay below.
-              </p>
-            </div>
-          )}
-
           {/* Direct link fallback for users who just want to go to Eventbrite */}
           <p className="text-center mt-8 text-white/50 text-sm font-body">
             {totalItems === 0 && (
@@ -361,6 +270,5 @@ export default function Tickets() {
           </p>
         </div>
       </section>
-    </>
   );
 }
