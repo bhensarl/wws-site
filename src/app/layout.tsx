@@ -134,6 +134,15 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <head>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4CCX20DX0Z"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4CCX20DX0Z');`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
