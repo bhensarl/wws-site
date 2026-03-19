@@ -67,7 +67,7 @@ export default function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Web3Forms access key — replace with your key after registration */}
-              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+              <input type="hidden" name="access_key" value="51ba1c8b-b2b1-4c87-8b9c-f7d8eb9a9ea0" />
               <input type="hidden" name="subject" value="New message from waynewoodstock.com" />
               <input type="hidden" name="from_name" value="WWS Contact Form" />
               <input type="hidden" name="redirect" value="" />
