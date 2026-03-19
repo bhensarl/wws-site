@@ -6,7 +6,6 @@ import Lineup from "@/components/Lineup";
 import Tickets from "@/components/Tickets";
 import Merch from "@/components/Merch";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
 
@@ -21,7 +20,6 @@ export default function Home() {
       <Tickets />
       <Merch />
       <FAQ />
-      <Contact />
       <Location />
       <Footer />
     </>

@@ -23,7 +23,7 @@ const MAIN_STAGE = [
     name: "mid",
     tag: null,
     link: "https://open.spotify.com/artist/4XWIgRRPzhAjHXOeEmD2a9",
-    image: null,
+    image: "/images/band-mid.jpg",
   },
   {
     name: "Porch Pirates",

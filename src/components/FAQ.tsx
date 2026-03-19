@@ -50,7 +50,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="font-display font-800 text-gold group-hover:text-gold-light transition-colors pr-4 text-base sm:text-lg">
+        <span className="font-display font-extrabold text-gold group-hover:text-gold-light transition-colors pr-4 text-base sm:text-lg">
           {q}
         </span>
         <svg

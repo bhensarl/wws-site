@@ -82,6 +82,7 @@ export default function Contact() {
                     id="name"
                     name="name"
                     required
+                    autoComplete="name"
                     className="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 font-body text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-colors"
                     placeholder="Your name"
                   />
@@ -95,6 +96,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     required
+                    autoComplete="email"
                     className="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 font-body text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-2 focus:ring-forest/30 focus:border-forest transition-colors"
                     placeholder="you@example.com"
                   />
