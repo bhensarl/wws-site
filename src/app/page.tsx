@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Gallery from "@/components/Gallery";
 import Lineup from "@/components/Lineup";
 import Tickets from "@/components/Tickets";
 import Merch from "@/components/Merch";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Gallery />
       <Lineup />
       <Tickets />
       <Merch />
