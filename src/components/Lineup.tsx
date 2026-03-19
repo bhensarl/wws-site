@@ -11,13 +11,13 @@ const MAIN_STAGE = [
     name: "Moxie Meelo",
     tag: null,
     link: "https://moxiemeelo.com/",
-    image: null,
+    image: "/images/band-moxiemeelo.jpg",
   },
   {
     name: "DiscoSpears",
     tag: "Foundational",
     link: "https://wrjams.com/discospears",
-    image: null,
+    image: "/images/band-discospears.png",
   },
   {
     name: "mid",
@@ -161,17 +161,26 @@ export default function Lineup() {
             </h3>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-sky/30" />
           </div>
-          <p className="text-center text-bark-light text-sm mb-6 font-body">
-            Presented by{" "}
-            <a
-              href="https://wrjams.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sky-dark hover:text-sky transition-colors underline"
-            >
-              W&amp;R Jams
-            </a>
-          </p>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Image
+              src="/images/wrjams-octopus.jpg"
+              alt="Jammie the Octopus — W&R Jams mascot"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full object-cover border-2 border-sky/30"
+            />
+            <p className="text-bark-light text-sm font-body">
+              Presented by{" "}
+              <a
+                href="https://wrjams.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-dark hover:text-sky transition-colors underline font-600"
+              >
+                W&amp;R Jams
+              </a>
+            </p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
             {OCTOPUS_STAGE.map((band) => (
               <BandCard key={band.name} {...band} />
