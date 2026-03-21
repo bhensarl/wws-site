@@ -40,6 +40,10 @@ If you use the **Personal_agent** monorepo-style folder, this project often live
 
 After changing the ID, redeploy. Confirm traffic in GA4 **Realtime**.
 
+## FAQ copy (shared with Eventbrite)
+
+FAQ questions/answers are **`src/data/faqs.json`**. The canonical file in the **Personal_agent** repo is **`wws-assets/marketing/faqs.json`** — copy it here after edits, then run `python3 scripts/sync_eventbrite_faqs.py` from Personal_agent to update the Eventbrite listing. See **`wws-assets/marketing/EVENTBRITE-FAQ-SYNC.md`** in Personal_agent.
+
 ## Site Sections
 
 | Section | Component | Description |
