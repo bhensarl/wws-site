@@ -29,6 +29,17 @@ npm run build   # outputs to /out as static HTML
 
 Vercel auto-deploys on push to `main`.
 
+## Repo location (Personal_agent workspace)
+
+If you use the **Personal_agent** monorepo-style folder, this project often lives at **`Personal_agent/wws-site/`**. That path is listed in Personal_agent’s `.gitignore` because **this directory is its own git repository** — Cursor’s search may skip it. Work on the site from **`wws-site/`** (this repo) for commits and deploys.
+
+## Analytics (GA4)
+
+- Component: `src/components/GoogleAnalytics.tsx` (uses `next/script`).
+- **Measurement ID:** set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel (recommended) or copy `.env.local.example` → `.env.local`. If unset, the default ID in the component matches the current live property.
+
+After changing the ID, redeploy. Confirm traffic in GA4 **Realtime**.
+
 ## Site Sections
 
 | Section | Component | Description |
