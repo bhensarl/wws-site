@@ -37,7 +37,7 @@ const OCTOPUS_STAGE = [
   {
     name: "Full Smoke",
     tag: null,
-    link: null,
+    link: "https://www.instagram.com/fullsmokeband/",
     image: null,
   },
   {

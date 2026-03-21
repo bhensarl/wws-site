@@ -121,7 +121,11 @@ const jsonLd = {
     { "@type": "MusicGroup", name: "DiscoSpears" },
     { "@type": "MusicGroup", name: "mid" },
     { "@type": "MusicGroup", name: "Porch Pirates" },
-    { "@type": "MusicGroup", name: "Full Smoke" },
+    {
+      "@type": "MusicGroup",
+      name: "Full Smoke",
+      sameAs: "https://www.instagram.com/fullsmokeband/",
+    },
     { "@type": "MusicGroup", name: "Lydia Grace" },
   ],
 };
