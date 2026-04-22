@@ -69,7 +69,7 @@ export default function Hero() {
           Saturday, May 16, 2026
         </p>
         <p className="font-display font-500 text-bark-light text-sm sm:text-base md:text-lg mb-8">
-          Waynewood Park &bull; Alexandria, VA &bull; 11 AM &ndash; Late
+          Waynewood Park &bull; Alexandria, VA &bull; Gates 11 AM &middot; Music 12&ndash;9:30 PM
         </p>
 
         {/* Countdown */}

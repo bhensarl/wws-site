@@ -1,0 +1,11 @@
+[
+  { "time": "12:00–1:15 PM", "length": "75 min", "stage": "Main", "act": "Lydia Grace" },
+  { "time": "1:15–2:00 PM", "length": "45 min", "stage": "Octopus", "act": "Full Smoke", "link": "https://www.instagram.com/fullsmokeband/" },
+  { "time": "2:00–3:15 PM", "length": "75 min", "stage": "Main", "act": "Moxie Meelo", "link": "https://moxiemeelo.com/" },
+  { "time": "3:15–4:00 PM", "length": "45 min", "stage": "Octopus", "act": "Monday at Larry's" },
+  { "time": "4:00–5:15 PM", "length": "75 min", "stage": "Main", "act": "DiscoSpears", "link": "https://wrjams.com/discospears" },
+  { "time": "5:15–6:00 PM", "length": "45 min", "stage": "Octopus", "act": "Rachel's Decision" },
+  { "time": "6:00–7:30 PM", "length": "90 min", "stage": "Main", "act": "mid", "tag": "Headliner", "link": "https://open.spotify.com/artist/4XWIgRRPzhAjHXOeEmD2a9" },
+  { "time": "7:30–8:15 PM", "length": "45 min", "stage": "Octopus", "act": "456 Jazz Grass Trio" },
+  { "time": "8:15–9:30 PM", "length": "75 min", "stage": "Main", "act": "Porch Pirates", "link": "https://www.facebook.com/p/Porch-Pirates-100089571789488/" }
+]

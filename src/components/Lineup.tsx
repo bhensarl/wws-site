@@ -1,9 +1,19 @@
 import Image from "next/image";
+import setTimes from "@/data/setTimes.json";
+
+type SetTime = {
+  time: string;
+  length: string;
+  stage: string;
+  act: string;
+  link?: string;
+  tag?: string;
+};
 
 const MAIN_STAGE = [
   {
-    name: "Rachel's Decision",
-    tag: "Foundational",
+    name: "Lydia Grace",
+    tag: "Opens Music",
     link: null,
     image: null,
   },
@@ -21,7 +31,7 @@ const MAIN_STAGE = [
   },
   {
     name: "mid",
-    tag: null,
+    tag: "Headliner",
     link: "https://open.spotify.com/artist/4XWIgRRPzhAjHXOeEmD2a9",
     image: "/images/band-mid.jpg",
   },
@@ -41,8 +51,20 @@ const OCTOPUS_STAGE = [
     image: null,
   },
   {
-    name: "Lydia Grace",
-    tag: "Coming Soon",
+    name: "Monday at Larry's",
+    tag: null,
+    link: null,
+    image: null,
+  },
+  {
+    name: "Rachel's Decision",
+    tag: "Foundational",
+    link: null,
+    image: null,
+  },
+  {
+    name: "456 Jazz Grass Trio",
+    tag: null,
     link: null,
     image: null,
   },
@@ -123,6 +145,51 @@ function BandCard({
   return content;
 }
 
+function ScheduleRow({ entry }: { entry: SetTime }) {
+  const isMain = entry.stage === "Main";
+  const stageClasses = isMain
+    ? "text-forest bg-forest/10"
+    : "text-sky-dark bg-sky/10";
+  const actNode = entry.link ? (
+    <a
+      href={entry.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-bark hover:text-forest transition-colors underline decoration-forest/40 underline-offset-2"
+    >
+      {entry.act}
+    </a>
+  ) : (
+    <span className="text-bark">{entry.act}</span>
+  );
+
+  return (
+    <div className="grid grid-cols-12 gap-2 sm:gap-4 py-3 border-b border-cream-dark last:border-0 items-center">
+      <div className="col-span-4 sm:col-span-3 font-display font-700 text-sm sm:text-base text-bark tabular-nums">
+        {entry.time}
+      </div>
+      <div className="col-span-2 sm:col-span-2">
+        <span
+          className={`inline-block text-[10px] sm:text-xs font-display font-700 uppercase tracking-wider px-2 py-1 rounded-full ${stageClasses}`}
+        >
+          {entry.stage}
+        </span>
+      </div>
+      <div className="col-span-6 sm:col-span-5 font-body text-sm sm:text-base">
+        {actNode}
+        {entry.tag && (
+          <span className="ml-2 inline-block text-[10px] font-display font-700 uppercase tracking-wider text-gold-dark bg-gold/15 px-2 py-0.5 rounded-full">
+            {entry.tag}
+          </span>
+        )}
+      </div>
+      <div className="hidden sm:block sm:col-span-2 text-right font-display text-xs text-bark-light tabular-nums">
+        {entry.length}
+      </div>
+    </div>
+  );
+}
+
 export default function Lineup() {
   return (
     <section id="lineup" className="py-20 sm:py-28 px-4 sm:px-6">
@@ -134,6 +201,9 @@ export default function Lineup() {
           <h2 className="font-display font-900 text-4xl sm:text-5xl text-bark">
             The Lineup
           </h2>
+          <p className="mt-4 font-body text-bark-light text-base sm:text-lg">
+            Nine bands. Two stages. Music <strong className="text-bark">12:00 PM&ndash;9:30 PM</strong> &mdash; stages alternate, no dead air.
+          </p>
         </div>
 
         {/* Main Stage */}
@@ -153,7 +223,7 @@ export default function Lineup() {
         </div>
 
         {/* Octopus Stage */}
-        <div>
+        <div className="mb-16">
           <div className="flex items-center gap-4 mb-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-sky/30" />
             <h3 className="font-display font-800 text-xl text-sky-dark uppercase tracking-wider whitespace-nowrap">
@@ -181,25 +251,45 @@ export default function Lineup() {
               </a>
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {OCTOPUS_STAGE.map((band) => (
               <BandCard key={band.name} {...band} />
             ))}
           </div>
         </div>
 
-        {/* Band Interest + More Acts */}
-        <div className="text-center mt-12 space-y-4">
-          <p className="font-display font-600 text-bark-light text-sm">
-            More acts to be announced &mdash; stay tuned!
+        {/* Set Times */}
+        <div id="schedule" className="mt-8 bg-cream-dark rounded-2xl p-6 sm:p-10 border border-cream-dark">
+          <div className="text-center mb-8">
+            <p className="font-display font-600 text-gold text-xs tracking-[0.3em] uppercase mb-2">
+              Saturday, May 16, 2026
+            </p>
+            <h3 className="font-display font-900 text-2xl sm:text-3xl text-bark">
+              Set Times
+            </h3>
+            <p className="mt-2 font-body text-bark-light text-sm">
+              Gates 11:00 AM &bull; Music 12:00 PM &ndash; 9:30 PM
+            </p>
+          </div>
+          <div className="bg-white rounded-xl px-4 sm:px-6 py-2">
+            {(setTimes as SetTime[]).map((entry) => (
+              <ScheduleRow key={entry.time} entry={entry} />
+            ))}
+          </div>
+          <p className="mt-4 text-center font-body text-xs text-bark-light">
+            Schedule subject to change &mdash; final times confirmed May 16.
           </p>
+        </div>
+
+        {/* Band Interest */}
+        <div className="text-center mt-12 space-y-4">
           <a
             href="https://tinyurl.com/WWS26-BandInterestForm"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-forest text-forest font-display font-700 text-sm px-6 py-2.5 rounded-full hover:bg-forest hover:text-white transition-colors"
           >
-            Want to play? Submit Band Interest
+            Want to play in 2027? Submit Band Interest
           </a>
         </div>
       </div>

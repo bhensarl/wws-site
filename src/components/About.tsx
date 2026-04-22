@@ -23,7 +23,7 @@ export default function About() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {[
             { stat: "2", label: "Stages" },
-            { stat: "7+", label: "Live Bands" },
+            { stat: "9", label: "Live Bands" },
             { stat: "800+", label: "Attended in '25" },
             { stat: "1", label: "Amazing Day" },
           ].map((item) => (
