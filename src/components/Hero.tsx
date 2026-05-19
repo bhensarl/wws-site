@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const EVENT_DATE = new Date("2026-05-16T11:00:00-04:00");
+const NEXT_EVENT_DATE = new Date("2027-05-22T11:00:00-04:00");
 
 function getTimeLeft() {
   const now = new Date();
-  const diff = EVENT_DATE.getTime() - now.getTime();
+  const diff = NEXT_EVENT_DATE.getTime() - now.getTime();
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -40,7 +40,6 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-      {/* Decorative background */}
       <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream to-cream-dark" />
       <div
         className="absolute top-0 left-0 w-full h-full opacity-[0.03]"
@@ -57,7 +56,7 @@ export default function Hero() {
         <div className="animate-float mb-6">
           <Image
             src="/images/hero-banner.png"
-            alt="Waynewoodstock 2026 — VW van with daisies"
+            alt="Waynewoodstock 2027 — VW van with daisies"
             width={600}
             height={300}
             priority
@@ -65,14 +64,20 @@ export default function Hero() {
           />
         </div>
 
+        <div className="inline-flex items-center gap-2 bg-forest/10 border border-forest/20 rounded-full px-4 py-1.5 mb-4">
+          <span className="w-2 h-2 rounded-full bg-forest animate-pulse" />
+          <span className="font-display font-700 text-forest text-xs tracking-widest uppercase">
+            That&rsquo;s a wrap on 2026 — see you in 2027
+          </span>
+        </div>
+
         <p className="font-display font-700 text-xl sm:text-2xl md:text-3xl text-bark mb-2">
-          Saturday, May 16, 2026
+          Saturday, May 22, 2027
         </p>
         <p className="font-display font-500 text-bark-light text-sm sm:text-base md:text-lg mb-8">
-          Waynewood Park &bull; Alexandria, VA &bull; Gates 11 AM &middot; Music 12&ndash;9:30 PM
+          Waynewood Park &bull; Alexandria, VA &bull; Tickets release January 2027
         </p>
 
-        {/* Countdown */}
         <div className="flex gap-6 sm:gap-10 mb-10">
           <CountdownUnit value={timeLeft.days} label="Days" />
           <CountdownUnit value={timeLeft.hours} label="Hours" />
@@ -80,24 +85,22 @@ export default function Hero() {
           <CountdownUnit value={timeLeft.seconds} label="Secs" />
         </div>
 
-        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="#tickets"
-            className="animate-pulse-glow bg-forest text-white font-display font-700 text-lg px-10 py-4 rounded-full hover:bg-forest-dark transition-colors"
+            href="#recap"
+            className="bg-forest text-white font-display font-700 text-lg px-10 py-4 rounded-full hover:bg-forest-dark transition-colors"
           >
-            Get Tickets
+            See the 2026 Recap
           </a>
           <a
-            href="#lineup"
+            href="#tickets"
             className="border-2 border-forest text-forest font-display font-700 text-lg px-10 py-4 rounded-full hover:bg-forest hover:text-white transition-colors"
           >
-            See the Lineup
+            2027 Tickets — Coming Soon
           </a>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg className="w-6 h-6 text-forest opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />

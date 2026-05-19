@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
+  { href: "#recap", label: "2026 Recap" },
   { href: "#lineup", label: "Lineup" },
-  { href: "#tickets", label: "Tickets" },
+  { href: "#tickets", label: "2027 Tickets" },
   { href: "#merch", label: "Merch" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
   { href: "#location", label: "Location" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -61,7 +62,7 @@ export default function Navbar() {
               href="#tickets"
               className="bg-forest text-white font-display font-700 text-sm px-5 py-2 rounded-full hover:bg-forest-dark transition-colors shadow-sm"
             >
-              Get Tickets
+              May 22, 2027
             </a>
           </div>
 
@@ -101,7 +102,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="block bg-forest text-white font-display font-700 text-center px-5 py-3 rounded-full hover:bg-forest-dark transition-colors"
             >
-              Get Tickets
+              Save the Date: May 22, 2027
             </a>
           </div>
         </div>

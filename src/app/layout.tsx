@@ -4,12 +4,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://waynewoodstock.com"),
-  title: "Waynewoodstock 2026 | Fort Hunt Music Festival",
+  title: "Waynewoodstock 2027 | Fort Hunt Music Festival",
   description:
-    "Join us May 16, 2026 for the 3rd annual Waynewoodstock — Fort Hunt's community music, arts, and food festival at Waynewood Park in Alexandria, VA.",
+    "Save the date: Saturday, May 22, 2027. The 4th annual Waynewoodstock — Fort Hunt's community music, arts, and food festival at Waynewood Park in Alexandria, VA. Tickets release January 2027.",
   keywords: [
     "Waynewoodstock",
-    "Waynewoodstock 2026",
+    "Waynewoodstock 2027",
     "Fort Hunt",
     "Fort Hunt music festival",
     "music festival Alexandria VA",
@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "live music Northern Virginia",
     "Alexandria VA events",
     "family festival Virginia",
-    "2026",
+    "2027",
   ],
   openGraph: {
-    title: "Waynewoodstock 2026 | Fort Hunt Music Festival",
+    title: "Waynewoodstock 2027 | Fort Hunt Music Festival",
     description:
-      "May 16, 2026 — Live music, local food, craft artisans, and good vibes at Waynewood Park in Alexandria, VA.",
+      "May 22, 2027 — Live music, local food, craft artisans, and good vibes at Waynewood Park in Alexandria, VA.",
     images: ["/images/hero-banner.png"],
     type: "website",
     url: "https://waynewoodstock.com",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Waynewoodstock 2026 | Fort Hunt Music Festival",
+    title: "Waynewoodstock 2027 | Fort Hunt Music Festival",
     description:
-      "May 16, 2026 — Live music, local food, craft artisans, and good vibes at Waynewood Park.",
+      "May 22, 2027 — Live music, local food, craft artisans, and good vibes at Waynewood Park.",
     images: ["/images/hero-banner.png"],
   },
   alternates: {
@@ -56,11 +56,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
-  name: "Waynewoodstock 2026",
+  name: "Waynewoodstock 2027",
   description:
-    "The 3rd annual Waynewoodstock — Fort Hunt's community music, arts, and food festival featuring live bands across two stages, local food trucks, craft artisans, and a beer garden.",
-  startDate: "2026-05-16T11:00:00-04:00",
-  endDate: "2026-05-16T21:00:00-04:00",
+    "The 4th annual Waynewoodstock — Fort Hunt's community music, arts, and food festival featuring live bands across two stages, local food trucks, craft artisans, and a beer garden. Tickets release January 2027.",
+  startDate: "2027-05-22T11:00:00-04:00",
+  endDate: "2027-05-22T21:00:00-04:00",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: {
@@ -86,48 +86,6 @@ const jsonLd = {
     name: "Waynewoodstock LLC",
     url: "https://waynewoodstock.com",
   },
-  offers: [
-    {
-      "@type": "Offer",
-      name: "Adult Pre-Sale",
-      price: "14.00",
-      priceCurrency: "USD",
-      url: "https://www.eventbrite.com/e/1373583608549",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-03-01",
-    },
-    {
-      "@type": "Offer",
-      name: "Family Pack (2 adults + 3 kids)",
-      price: "55.00",
-      priceCurrency: "USD",
-      url: "https://www.eventbrite.com/e/1373583608549",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-03-01",
-    },
-    {
-      "@type": "Offer",
-      name: "Child (5+)",
-      price: "10.00",
-      priceCurrency: "USD",
-      url: "https://www.eventbrite.com/e/1373583608549",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-03-01",
-    },
-  ],
-  performer: [
-    { "@type": "MusicGroup", name: "Rachel's Decision" },
-    { "@type": "MusicGroup", name: "Moxie Meelo" },
-    { "@type": "MusicGroup", name: "DiscoSpears" },
-    { "@type": "MusicGroup", name: "mid" },
-    { "@type": "MusicGroup", name: "Porch Pirates" },
-    {
-      "@type": "MusicGroup",
-      name: "Full Smoke",
-      sameAs: "https://www.instagram.com/fullsmokeband/",
-    },
-    { "@type": "MusicGroup", name: "Lydia Grace" },
-  ],
 };
 
 export default function RootLayout({

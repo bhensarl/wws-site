@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Recap from "@/components/Recap";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Lineup from "@/components/Lineup";
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <Recap />
       <About />
       <Gallery />
       <Lineup />

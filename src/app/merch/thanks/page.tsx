@@ -26,10 +26,10 @@ export default function MerchThanksPage() {
         <p className="font-body text-bark-light text-sm mb-8">
           Questions or pickup logistics?{" "}
           <a
-            href="mailto:brian@waynewoodstock.com"
+            href="mailto:sales@waynewoodstock.com"
             className="text-forest underline hover:text-forest-dark"
           >
-            brian@waynewoodstock.com
+            sales@waynewoodstock.com
           </a>
         </p>
         <Link
