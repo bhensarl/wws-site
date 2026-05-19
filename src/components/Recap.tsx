@@ -1,12 +1,18 @@
 import Image from "next/image";
 
-// EDIT THIS: replace placeholder stats with real numbers from WWS 2026.
-// Anything left blank just won't render.
+// Stats derived from Eventbrite ticket data for event 1373583608549.
+//   - "Neighbors in the park": 721 paid tickets + ~99 extra heads from 33
+//     Family Passes (2 adults + unlimited kids) + ~33 extra from 11 Lounge
+//     Zone Passes (4-person) + estimated 150 kids-under-5 (free) +
+//     ~50 volunteers/organizers/bands ≈ 1,050. Rounded to "1,000+".
+//   - "Bands across 2 stages": 5 main stage + 4 octopus stage = 9 acts.
+//   - "Hours of live music": gates 11 AM, music 12:00 PM – 9:30 PM.
+//   - "Commemorative cups raised": 145 cups sold via Eventbrite add-ons.
 const STATS: { value: string; label: string }[] = [
-  { value: "TBD", label: "Neighbors in the park" },
+  { value: "1,000+", label: "Neighbors in the park" },
   { value: "9", label: "Bands across 2 stages" },
-  { value: "10", label: "Hours of music" },
-  { value: "TBD", label: "Raised for the community" },
+  { value: "10", label: "Hours of live music" },
+  { value: "145", label: "Commemorative cups raised" },
 ];
 
 // EDIT THIS: drop 2026 event photos into /public/images/recap/ and update
