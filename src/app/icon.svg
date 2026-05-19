@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Waynewoodstock acoustic guitar">
+  <title>Waynewoodstock</title>
+
+  <!-- Headstock with three tuning pegs -->
+  <path d="M 25 2 L 39 2 L 38 7 L 26 7 Z" fill="#3D2B1F" />
+  <circle cx="28" cy="4.2" r="0.9" fill="#DAA520" />
+  <circle cx="32" cy="4.2" r="0.9" fill="#DAA520" />
+  <circle cx="36" cy="4.2" r="0.9" fill="#DAA520" />
+
+  <!-- Neck with two fret-marker dots -->
+  <rect x="30" y="7" width="4" height="18" fill="#3D2B1F" />
+  <circle cx="32" cy="13" r="0.7" fill="#F5F0E8" />
+  <circle cx="32" cy="19" r="0.7" fill="#F5F0E8" />
+
+  <!-- Acoustic body: two overlapping circles form the figure-8 silhouette -->
+  <g fill="#4A7C3F">
+    <circle cx="32" cy="28" r="10" />
+    <circle cx="32" cy="48" r="14" />
+  </g>
+
+  <!-- Soundhole -->
+  <circle cx="32" cy="46" r="3.6" fill="#F5F0E8" />
+  <circle cx="32" cy="46" r="3.6" fill="none" stroke="#3D2B1F" stroke-width="0.6" />
+
+  <!-- Bridge -->
+  <rect x="27.5" y="53" width="9" height="2" rx="0.5" fill="#3D2B1F" />
+
+  <!-- Strings (subtle, only over the soundhole + bridge to suggest tension) -->
+  <g stroke="#F5F0E8" stroke-width="0.35" opacity="0.85">
+    <line x1="30.5" y1="42" x2="29.5" y2="55" />
+    <line x1="31.5" y1="42" x2="31" y2="55" />
+    <line x1="32.5" y1="42" x2="33" y2="55" />
+    <line x1="33.5" y1="42" x2="34.5" y2="55" />
+  </g>
+</svg>
