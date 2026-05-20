@@ -1,0 +1,30 @@
+name: Image budget
+
+on:
+  pull_request:
+    paths:
+      - "public/images/**"
+      - "scripts/check-image-budget.py"
+      - ".github/workflows/image-budget.yml"
+  push:
+    branches: [main]
+    paths:
+      - "public/images/**"
+      - "scripts/check-image-budget.py"
+      - ".github/workflows/image-budget.yml"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: pip install --quiet Pillow
+
+      - name: Run image-budget check
+        run: python3 scripts/check-image-budget.py
